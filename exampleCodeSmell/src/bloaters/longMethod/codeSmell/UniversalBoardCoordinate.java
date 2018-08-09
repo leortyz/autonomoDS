@@ -15,7 +15,9 @@ public class UniversalBoardCoordinate {
     int column;
 
     public UniversalBoardCoordinate(String locationPhrase) throws Exception {
-        String noParens = locationPhrase.replace('(', ' ').replace(')', ' ');
+        locationPhrase = locationPhrase.replace('(', ' ');
+        locationPhrase = locationPhrase.replace(')', ' ');
+        String noParens = locationPhrase;
         String[] coordinates = noParens.split(",");
 
         if (coordinates.length != 2) {
